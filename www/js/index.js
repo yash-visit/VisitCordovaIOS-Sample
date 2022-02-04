@@ -39,9 +39,14 @@ function onDeviceReady() {
     });
 }
 
+function restartApplication(){
+  console.log('the restartApplication called')
+  window.location.reload();
+}
+
 function loadVisitURL(baseUrl, firebase_default_client_id, user_token, userId) {
     cordova.exec(
-      null,
+     restartApplication,
       null,
       "CordovaFitnessPlugin", //plugin class name
       "loadVisitWebUrl", //plugin method
